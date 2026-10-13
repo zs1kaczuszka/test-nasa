@@ -1,0 +1,216 @@
+```html
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking Chlebów 🍞</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+
+            background: linear-gradient(
+                45deg,
+                red, orange, yellow, green,
+                cyan, blue, violet, red
+            );
+
+            background-size: 400% 400%;
+            animation: tecza 10s ease infinite;
+        }
+
+        @keyframes tecza {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 15px;
+            background: #00000055;
+            text-shadow: 0 0 12px white;
+        }
+
+        header h1 {
+            font-size: 40px;
+            margin: 0 0 10px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .ranking {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .karta {
+            background: #151515dd;
+            border: 2px solid #ffffff99;
+            border-radius: 16px;
+            padding: 20px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 0 18px #00000055;
+            transition: 0.3s;
+        }
+
+        .karta:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 0 25px white;
+        }
+
+        .miejsce {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffdf70;
+        }
+
+        .chleb {
+            font-size: 65px;
+            margin: 10px;
+        }
+
+        .gwiazdki {
+            color: gold;
+            font-size: 23px;
+        }
+
+        button {
+            background: #ffca3a;
+            color: #222;
+            border: none;
+            border-radius: 8px;
+            padding: 11px 16px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #ffe58a;
+        }
+
+        .info {
+            display: none;
+            margin-top: 12px;
+            line-height: 1.5;
+            color: #fff3a0;
+        }
+
+        .info.pokaz {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #00000066;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🍞 RANKING CHLEBÓW 🍞</h1>
+        <p>Pięć chlebów. Jeden ranking. Wielka walka o kromkę!</p>
+    </header>
+
+    <main>
+        <h2 style="text-align:center;">🏆 TOP 5 CHLEBÓW</h2>
+
+        <section class="ranking">
+
+            <div class="karta">
+                <div class="miejsce">#1</div>
+                <div class="chleb">🥖</div>
+                <h2>Bagietka</h2>
+                <div class="gwiazdki">★★★★★</div>
+                <p>Chrupiąca legenda piekarni.</p>
+                <button onclick="pokazInfo('chleb1')">Ocena chleba</button>
+                <div class="info" id="chleb1">
+                    Ocena: 10/10. Świetna do kanapek i jedzenia z masłem.
+                </div>
+            </div>
+
+            <div class="karta">
+                <div class="miejsce">#2</div>
+                <div class="chleb">🍞</div>
+                <h2>Chleb pszenny</h2>
+                <div class="gwiazdki">★★★★★</div>
+                <p>Klasyka, która pasuje do wszystkiego.</p>
+                <button onclick="pokazInfo('chleb2')">Ocena chleba</button>
+                <div class="info" id="chleb2">
+                    Ocena: 9/10. Miękki, smaczny i dobry na śniadanie.
+                </div>
+            </div>
+
+            <div class="karta">
+                <div class="miejsce">#3</div>
+                <div class="chleb">🌾</div>
+                <h2>Chleb razowy</h2>
+                <div class="gwiazdki">★★★★☆</div>
+                <p>Treściwy chleb o wyrazistym smaku.</p>
+                <button onclick="pokazInfo('chleb3')">Ocena chleba</button>
+                <div class="info" id="chleb3">
+                    Ocena: 8/10. Dobry wybór do sera i warzyw.
+                </div>
+            </div>
+
+            <div class="karta">
+                <div class="miejsce">#4</div>
+                <div class="chleb">🥪</div>
+                <h2>Chleb tostowy</h2>
+                <div class="gwiazdki">★★★☆☆</div>
+                <p>Najlepszy przy robieniu tostów.</p>
+                <button onclick="pokazInfo('chleb4')">Ocena chleba</button>
+                <div class="info" id="chleb4">
+                    Ocena: 7/10. Po podgrzaniu jest chrupiący i pyszny.
+                </div>
+            </div>
+
+            <div class="karta">
+                <div class="miejsce">#5</div>
+                <div class="chleb">🫓</div>
+                <h2>Chlebek pita</h2>
+                <div class="gwiazdki">★★★☆☆</div>
+                <p>Idealny do nadziewania różnymi dodatkami.</p>
+                <button onclick="pokazInfo('chleb5')">Ocena chleba</button>
+                <div class="info" id="chleb5">
+                    Ocena: 6/10. Dobry do kebaba, warzyw i sosów.
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>🍞 Ranking Chlebów | 2026 | Chleb ponad wszystko!</p>
+    </footer>
+
+    <script>
+        function pokazInfo(id) {
+            document.getElementById(id).classList.toggle("pokaz");
+        }
+    </script>
+
+</body>
+</html>
+```
